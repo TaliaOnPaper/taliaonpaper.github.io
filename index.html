@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NLS | TOP — Notch Line Studio × TaliaOnPaper</title>
+<meta name="description" content="Notch Line Studio and TaliaOnPaper. Original stories, worlds and creative works, including the dark fantasy trilogy Pantheon of Monarchs.">
+<meta property="og:title" content="NLS | TOP — Notch Line Studio × TaliaOnPaper">
+<meta property="og:description" content="Original stories, worlds and creative works.">
+<meta property="og:image" content="logos/nlsxtop.webp">
+<meta name="theme-color" content="#0c0b0a">
+<link rel="icon" href="logos/nlsxtop.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0c0b0a; --ink-2:#141210; --line:#2a2622;
+    --paper:#ece4d4; --muted:#9a9184; --dim:#6b645a;
+    --rust:#b5543a; --gold:#c9a45c; --gold-dim:#8a7140;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Manrope", system-ui, sans-serif;
+    --mono:"DM Mono", ui-monospace, monospace;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--rust);color:var(--paper)}
+
+  /* paper grain */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .label{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .label b{color:var(--rust);font-weight:500}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+  h2{font-size:clamp(44px,7vw,84px)}
+  h3{font-size:clamp(30px,4vw,40px)}
+  p{color:#d6cebf;max-width:58ch}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+  nav.solid{background:rgba(12,11,10,.86);backdrop-filter:blur(10px);border-color:var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .mark{font-family:var(--sans);font-weight:600;letter-spacing:.06em;font-size:14px}
+  .mark span{color:var(--dim);margin:0 6px;font-weight:400}
+  nav ul{display:flex;gap:28px;list-style:none}
+  nav ul a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+  nav ul a:hover{color:var(--paper)}
+
+  /* links row */
+  .handles{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .handle{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:13px;color:var(--paper);transition:border-color .25s,background .25s}
+  .handle small{color:var(--dim);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+  .handle:hover{border-color:var(--paper);background:rgba(236,228,212,.04)}
+
+  /* hero */
+  .hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:110px 0 140px;position:relative}
+  .hero-logo{width:min(220px,48vw);aspect-ratio:1;border-radius:50%;overflow:hidden;background:#000;margin:0 auto 44px;box-shadow:0 0 0 1px var(--line),0 0 0 14px var(--ink),0 0 0 15px #1d1a17;animation:breathe 7s ease-in-out infinite}
+  .hero-logo img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+  @keyframes breathe{50%{box-shadow:0 0 0 1px var(--line),0 0 0 18px var(--ink),0 0 0 19px #2a2520}}
+  .hero h1{font-size:clamp(46px,9vw,120px);font-weight:400}
+  .hero h1 > span{display:block}
+  .hero h1 .bar{width:56px;height:1px;background:var(--rust);margin:.28em auto .3em}
+  .hero h1 em{font-style:italic}
+  .hero .tag{margin:26px auto 0;color:var(--muted);font-size:18px}
+  .hero .handles{justify-content:center}
+  .scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--dim)}
+  .scroll::after{content:"";display:block;width:1px;height:38px;background:linear-gradient(var(--dim),transparent);margin:12px auto 0}
+
+  section{padding:130px 0;border-top:1px solid var(--line)}
+
+  /* split sections */
+  .split{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
+  .split.rev{grid-template-columns:1fr 1.1fr}
+  .split.rev .media{order:2}
+  .media img{border-radius:4px;border:1px solid var(--line)}
+  .media.round img{border-radius:50%;width:min(360px,100%);aspect-ratio:1;object-fit:cover;margin:0 auto}
+  .split h2{margin:18px 0 6px}
+  .sub{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--muted);margin-bottom:22px}
+
+  /* flagship */
+  #pantheon{background:radial-gradient(ellipse at 50% 0%,#151a24 0%,var(--ink) 65%);position:relative;overflow:hidden}
+  #pantheon .label b{color:var(--gold)}
+  .flag{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .flag img{width:100%;max-width:480px;margin:0 auto;border-radius:6px;filter:drop-shadow(0 30px 80px rgba(201,164,92,.12))}
+  .flag h2{color:var(--gold);font-weight:500;letter-spacing:.02em;margin:18px 0 18px;font-size:clamp(44px,6vw,76px)}
+  .genres{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+  .genres span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:5px 11px;border-radius:2px}
+  .trilogy{margin-top:40px;border-top:1px solid #2b2618}
+  .trilogy div{display:flex;gap:22px;align-items:baseline;padding:16px 0;border-bottom:1px solid #2b2618}
+  .trilogy i{font-family:var(--serif);font-style:normal;color:var(--gold);font-size:22px;width:28px}
+  .trilogy span{font-family:var(--serif);font-size:24px}
+  .trilogy small{margin-left:auto;white-space:nowrap;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  .status{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold);animation:pulse 2.4s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+
+  /* concepts */
+  .concepts-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:64px;flex-wrap:wrap}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--ink-2);border:1px solid var(--line);border-radius:4px;padding:36px 30px 34px;display:flex;flex-direction:column;min-height:460px;transition:border-color .35s,transform .35s}
+  .card:hover{border-color:#3d3730;transform:translateY(-4px)}
+  .card .num{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.14em}
+  .card h3{margin:22px 0 10px}
+  .card .g{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:22px}
+  .card p{font-size:16px}
+  .card .foot{margin-top:auto;padding-top:28px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--muted)}
+
+  /* card 1: memory fades */
+  .fade-word{transition:opacity 1.6s ease,filter 1.6s ease}
+  .card.perhaps:hover .fade-word{opacity:.12;filter:blur(2px)}
+
+  /* card 2: newspaper */
+  .card.paper{background:#e6dcc8;color:#1b1814;border-color:#e6dcc8}
+  .card.paper:hover{border-color:#fff}
+  .card.paper .num{color:#6e6556;display:flex;justify-content:space-between;border-bottom:2px solid #1b1814;padding-bottom:10px}
+  .card.paper h3{font-weight:600;letter-spacing:-.02em}
+  .card.paper p{color:#2c2720}
+  .card.paper .g{color:#8f3b26}
+  .card.paper .foot{color:#5b5346}
+  .caret{display:inline-block;width:.06em;min-width:2px;height:.85em;background:#1b1814;margin-left:4px;vertical-align:-.05em;animation:blink 1.05s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* card 3: two faces */
+  .faces{margin-top:auto;padding-top:28px;display:grid;gap:4px}
+  .faces span{font-family:var(--serif);font-size:24px;line-height:1.15;transition:color .5s,opacity .5s}
+  .faces .soft{color:var(--paper)}
+  .faces .sharp{color:var(--rust);font-style:italic}
+  .card.mask:hover .soft{opacity:.25}
+  .card.mask:hover .sharp{color:#d8674a}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:110px 0 50px;text-align:center}
+  footer .big{font-family:var(--serif);font-size:clamp(54px,12vw,150px);line-height:1;letter-spacing:-.02em;color:#1f1c19;user-select:none}
+  footer .big span{color:var(--rust)}
+  footer .contact{margin:40px 0 0;font-family:var(--mono);font-size:14px}
+  footer .contact a{border-bottom:1px solid var(--dim);padding-bottom:2px}
+  footer .contact a:hover{border-color:var(--paper)}
+  .legal{margin:56px auto 0;font-size:13px;color:var(--dim);max-width:60ch;line-height:1.7}
+
+  /* reveal */
+  .r{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s ease}
+  .r.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .r{opacity:1;transform:none}
+  }
+
+  @media (max-width:900px){
+    nav ul{display:none}
+    section{padding:96px 0}
+    .split,.split.rev,.flag{grid-template-columns:1fr;gap:44px}
+    .split.rev .media{order:0}
+    .grid{grid-template-columns:1fr}
+    .card{min-height:0}
+    .concepts-head{margin-bottom:40px}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="mark">NLS<span>|</span>TOP</a>
+    <ul>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#pen">The Pen</a></li>
+      <li><a href="#pantheon">Pantheon</a></li>
+      <li><a href="#concepts">Concepts</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-logo r"><img src="logos/nlsxtop.webp" alt="NLS | TOP logo" width="640" height="640"></div>
+    <h1 class="r"><span>Notch Line Studio</span><span class="bar" aria-hidden="true"></span><span><em>TaliaOnPaper</em></span></h1>
+    <p class="tag r">Original stories, worlds and creative works, written under a pen name.</p>
+    <div class="handles r">
+      <a class="handle" href="https://www.youtube.com/@nlsxtop" target="_blank" rel="noopener"><small>YouTube</small>@nlsxtop</a>
+      <a class="handle" href="https://www.instagram.com/nlsxtop" target="_blank" rel="noopener"><small>Instagram</small>@nlsxtop</a>
+    </div>
+  </div>
+  <div class="scroll">SCROLL</div>
+</header>
+
+<section id="studio">
+  <div class="wrap split">
+    <div class="media r"><img src="logos/nls.webp" alt="Notchline Studio logo" width="1200" height="655" loading="lazy"></div>
+    <div class="r">
+      <div class="label"><b>01</b> — The Studio</div>
+      <h2>Notchline Studio</h2>
+      <div class="sub">A dream studio, in the making.</div>
+      <p>The future home for creative and artistic works. For now it holds the ideas. Later, it will make them.</p>
+      <div class="handles">
+        <a class="handle" href="https://www.youtube.com/@notchlinestudio" target="_blank" rel="noopener"><small>YouTube</small>@notchlinestudio</a>
+        <a class="handle" href="https://www.instagram.com/notchlinestudio" target="_blank" rel="noopener"><small>Instagram</small>@notchlinestudio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pen">
+  <div class="wrap split rev">
+    <div class="media round r"><img src="logos/talia.webp" alt="TaliaOnPaper signature logo" width="800" height="800" loading="lazy"></div>
+    <div class="r">
+      <div class="label"><b>02</b> — The Pen</div>
+      <h2>TaliaOnPaper</h2>
+      <div class="sub">Writer · Storyteller · Worldbuilder</div>
+      <p>The pen name behind every concept on this page. Every world here was written on paper by Talia first.</p>
+      <div class="handles">
+        <a class="handle" href="https://www.youtube.com/@taliaonpaper" target="_blank" rel="noopener"><small>YouTube</small>@taliaonpaper</a>
+        <a class="handle" href="https://www.instagram.com/taliaonpaper" target="_blank" rel="noopener"><small>Instagram</small>@taliaonpaper</a>
+        <a class="handle" href="https://github.com/TaliaOnPaper" target="_blank" rel="noopener"><small>GitHub</small>TaliaOnPaper</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pantheon">
+  <div class="wrap flag">
+    <div class="r"><img src="logos/pom.webp" alt="Pantheon of Monarchs emblem: a woven crown inside a ring of threads" width="900" height="900" loading="lazy"></div>
+    <div class="r">
+      <div class="label"><b>03</b> — Flagship</div>
+      <h2>Pantheon of Monarchs</h2>
+      <div class="genres"><span>Dark fantasy</span><span>Cosmic tragedy</span><span>Trilogy</span></div>
+      <p>Divine Nape Marks set the Monarchs apart from ordinary humanity. Reece Dominic and Iris Emberlin rule with their children, Kai Dominic and Faye Celeste, guarded by the ageless Godfrey Aurelius. But humanity has rejected the Pact of Life in pursuit of <em>more</em>, and summoned something that can never be satisfied.</p>
+      <div class="trilogy">
+        <div><i>I</i><span>Pantheon of Monarchs</span><small>Main saga</small></div>
+        <div><i>II</i><span>Memoirs</span></div>
+        <div><i>III</i><span>The Forbidden Thread</span></div>
+      </div>
+      <div class="status">In development</div>
+    </div>
+  </div>
+</section>
+
+<section id="concepts">
+  <div class="wrap">
+    <div class="concepts-head r">
+      <div>
+        <div class="label"><b>04</b> — Concepts</div>
+        <h2 style="margin-top:18px">Other stories</h2>
+      </div>
+      <p style="color:var(--muted)">Three more worlds, still being written.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card perhaps r">
+        <div class="num">I</div>
+        <h3>Perhaps, This Is Also the Side of Me</h3>
+        <div class="g">Character drama</div>
+        <p>Vance Miller was once a bully. Lucy Bennett knows that pain too well. They find each other in ordinary moments, until <span class="fade-word">memory takes away what they built.</span> Can something still matter after it's forgotten?</p>
+        <div class="foot">Vance Miller &amp; Lucy Bennett</div>
+      </article>
+
+      <article class="card paper r">
+        <div class="num"><span>II</span><span>DATE: ——</span></div>
+        <h3>Balckan Jacardi Found—<span class="caret" aria-hidden="true"></span></h3>
+        <div class="g">Surreal mystery</div>
+        <p>What Balckan changes in his dreams changes reality. Then a newspaper starts reporting what he's done, and maybe what he'll do next. How far ahead is it?</p>
+        <div class="foot">The rest of the title has yet to be written.</div>
+      </article>
+
+      <article class="card mask r">
+        <div class="num">III</div>
+        <h3>Masked Mystique</h3>
+        <div class="g">Psychological thriller · Vigilante</div>
+        <p>To children, Dolores Montgomery is Aunt Polly. To a corrupt city's powerful, she's Huntress in Black, and she's working inside the investigation that's hunting her.</p>
+        <div class="faces">
+          <span class="soft">Aunt Polly</span>
+          <span class="sharp">Huntress in Black</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="big" aria-hidden="true">NLS <span>|</span> TOP</div>
+    <div class="contact">Contact: <a href="mailto:taliaonpaper@gmail.com">taliaonpaper@gmail.com</a></div>
+    <div class="handles" style="justify-content:center">
+      <a class="handle" href="https://www.instagram.com/nlsxtop" target="_blank" rel="noopener">@nlsxtop</a>
+      <a class="handle" href="https://www.instagram.com/notchlinestudio" target="_blank" rel="noopener">@notchlinestudio</a>
+      <a class="handle" href="https://www.instagram.com/taliaonpaper" target="_blank" rel="noopener">@taliaonpaper</a>
+    </div>
+    <p class="legal">© <span id="yr">2026</span> TaliaOnPaper · Notch Line Studio. All stories, characters, worlds and logos on this page are original works. Please don't reproduce them without permission.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  const els = document.querySelectorAll('.r');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach((el, i) => { el.style.transitionDelay = (i % 3) * 90 + 'ms'; io.observe(el); });
+  } else { els.forEach((el) => el.classList.add('in')); }
+</script>
+</body>
+</html>
